@@ -1,0 +1,43 @@
+Angular Library
+--
+ng new my-big-app --create-application=false
+
+The above cmd will not create app. It will create workspace. It's empty project 
+
+
+Creating and Using Library 
+--
+  4 Steps 
+  --
+    Step 1: 
+      Create workspace 
+      ng new my-big-app --create-application=false
+
+    Step 2: 
+    -- 
+      create a Library 
+      cd my-big-app
+      ng g library my-weather-lib --prefix=mwl 
+
+    
+    Step 3: 
+    ---
+      create an angular app 
+      ng g application weather-app-demo
+
+    Step 4: 
+    ---
+      Make use of the library in an angular app 
+      4.1) Take a build of library 
+          ng build my-weather-lib 
+
+      4.2) use the aboe lib in ng project 
+        in app.module.ts
+        import { MyWeatherLibModule } from 'my-weather-lib';
+
+        imports: [
+          BrowserModule,
+          AppRoutingModule,
+          MyWeatherLibModule // add this 
+        ],
+--
